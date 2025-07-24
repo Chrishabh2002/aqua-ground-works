@@ -1,4 +1,12 @@
 import { ArrowRight, Play } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 const Hero = () => {
   return (
@@ -41,15 +49,23 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-hero group">
+              <Button 
+                variant="hero" 
+                onClick={() => scrollToSection('contact')}
+                className="group"
+              >
                 Get Free Quote
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Button>
               
-              <button className="btn-secondary-hero group">
+              <Button 
+                variant="secondary-hero" 
+                onClick={() => scrollToSection('about')}
+                className="group"
+              >
                 <Play className="mr-2 w-5 h-5" />
-                Watch Our Work
-              </button>
+                Learn More
+              </Button>
             </div>
 
             {/* Stats */}
