@@ -249,3 +249,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+console.log("Contact form submitted:")
